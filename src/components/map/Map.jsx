@@ -1,13 +1,16 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { FaBook, FaCalculator, FaFlask, FaGlobe } from 'react-icons/fa';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import User from './User';
 function Map() {
   const [showQuestionnaire, setShowQuestionnaire] = useState(false);
   const [selectedDiscipline, setSelectedDiscipline] = useState(null);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [answers, setAnswers] = useState({});
+  const [points, setPoints] = useState(0)
 
-  const containerStyle = 'flex items-center justify-center h-screen w-screen';
+  const containerStyle = 'flex  gap-40 w-full mt-[-150px] justify-center items-center ';
 
   const circleStyle =
     'flex flex-col items-center text-center p-4 cursor-pointer rounded-lg shadow-md transform hover:scale-105 transition-transform ease-in-out';
@@ -43,6 +46,12 @@ function Map() {
   };
 
   const handleAnswerSubmit = () => {
+    if(selectedAnswer === 'Muito Importante'){
+      toast.success("Resposta correta!");
+      setPoints(points+1)
+    }else{
+      toast.error("Resposta incorreta.");
+    }
     setAnswers((prevAnswers) => ({
       ...prevAnswers,
       [selectedDiscipline]: selectedAnswer,
@@ -52,7 +61,9 @@ function Map() {
 
   return (
     <div className={containerStyle}>
+      <User points={points} />
       <div className="flex items-center justify-center space-x-4">
+
         {disciplines.map((discipline, index) => (
           <div
             key={index}
@@ -103,6 +114,7 @@ function Map() {
           ))}
         </div>
       )}
+      <ToastContainer />
     </div>
   );
 }
