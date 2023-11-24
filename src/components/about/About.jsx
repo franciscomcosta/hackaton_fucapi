@@ -6,7 +6,7 @@ function About(){
             
             <div className="md:container px-2 pt-5 text-center flex flex-col items-center justify-center space-y-10">
           <div className="w-full md:w-2/3">
-            <div className="relative inline-block p-4 bg-gray-600 text-white rounded-md shadow-md hover:shadow-lg">
+            <div className="relative inline-block p-4 bg-gray-700 text-white rounded-md shadow-md hover:shadow-lg">
               <p>
                 Bem-vindo ao nosso playground educacional! Aqui, transformamos o Ensino de Jovens e Adultos (EJA) em uma jornada empolgante, onde cada desafio é uma aventura e cada conquista é celebrada como um troféu. Aprender conosco é como explorar um universo de conhecimento, personalizado para cada aluno, porque, afinal, na EJA, cada história é única e merece ser contada com brilho nos olhos.
               </p>
@@ -15,7 +15,7 @@ function About(){
           <div className="w-full md:w-2/3 flex items-center space-x-6">
             <img src={Man} className="w-1/4 mx-auto mb-6" alt="Imagem de um homem" />
     
-            <div className="relative inline-block p-4 bg-gray-600 text-white rounded-md shadow-md hover:shadow-lg">
+            <div className="relative inline-block p-4 bg-gray-700 text-white rounded-md shadow-md hover:shadow-lg">
               <p>
                 "Nossa abordagem na Educação de Jovens e Adultos (EJA) é como um café brasileiro: forte, envolvente e cheio de sabor. Aqui, a sala de aula é um palco, os livros são guias e cada aluno é o protagonista de sua própria história educacional. Descomplicamos o aprendizado, transformando o EJA em uma experiência descontraída, onde o conhecimento não é apenas transmitido, mas vivido com entusiasmo, porque na EJA, o aprendizado é uma celebração da resiliência e do potencial infinito."
               </p>

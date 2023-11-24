@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import Logo from '../../assets/logo.png'
 
 const Nav = () => {
@@ -6,21 +6,21 @@ const Nav = () => {
     let Links =[
       {name:"Início",link:"/"},
       {name:"Jornada",link:"/Map"},
-      {name:"Contatos",link:"/"},
+      {name:"Contatos",link:"/contatos"},
       {name:"Sobre",link:"/sobre"},
     ];
 
     let [open,setOpen]=useState(false);
 
   return (
-    <div className='shadow-md w-full fixed top-0 left-0'>
+    <div className='shadow-md w-full top-0 left-0'>
       <div className='md:flex items-center justify-between bg-stone-900 py-4 md:px-10 px-7'>
-      <div className='font-bold text-2xl cursor-pointer flex items-center font-[Poppins] 
+      <div className='font-bold text-2xl cursor-pointer flex items-center 
       text-white'>
         <span className='text-3xl text-white mr-1 pt-2'>
-        <ion-icon name="logo-ionic"></ion-icon>
+        <img src={Logo} className='w-40 ' />
         </span>
-        <img src={Logo} className='w-1/4 ' />
+        <a className='text-white hover:text-gray-400 duration-500'>Sistema de aplicação básica em Educação</a>
       </div>
       
       <div onClick={()=>setOpen(!open)} className='text-3xl absolute right-8 top-6 cursor-pointer md:hidden'>
