@@ -1,8 +1,9 @@
-import  { useState } from 'react';
+import  React, { useState } from 'react';
 import { FaBook, FaCalculator, FaFlask, FaGlobe } from 'react-icons/fa';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import User from './User';
+import { Navigate } from 'react-router-dom';
 function Map() {
   const [showQuestionnaire, setShowQuestionnaire] = useState(false);
   const [selectedDiscipline, setSelectedDiscipline] = useState(null);
@@ -59,22 +60,32 @@ function Map() {
     setShowQuestionnaire(false);
   };
 
+  const gotoPdf = () => {
+    window.location.href('https://www.sjc.sp.gov.br/media/121101/geo-hist-fase-1.pdf')
+  }
+
   return (
     <div className={containerStyle}>
       <User points={points} />
-      <div className="flex items-center justify-center space-x-4">
-
-        {disciplines.map((discipline, index) => (
-          <div
-            key={index}
-            className={circleStyle}
-            onClick={() => handleDisciplineClick(discipline.name)}
-          >
-            {discipline.icon}
-            <span className="text-orange-500 font-semibold">{discipline.name}</span>
-          </div>
-        ))}
+      <div className="flex items-center justify-center space-x-4 flex-col">
+  {disciplines.map((discipline, index) => (
+    <React.Fragment key={index}>
+      {index > 0 && (
+        <div className="w-0.5 bg-gray-600 h-12"></div>
+      )}
+      <div
+        className={circleStyle}
+        onClick={() => handleDisciplineClick(discipline.name)}
+      >
+        {discipline.icon}
+        <span className="text-orange-500 font-semibold">
+          {discipline.name}
+        </span>
       </div>
+    </React.Fragment>
+  ))}
+</div>
+
 
       {showQuestionnaire && (
         <div className={questionnaireStyle}>
@@ -101,6 +112,7 @@ function Map() {
           <button className={submitButtonStyle} onClick={handleAnswerSubmit}>
             Submeter
           </button>
+          
         </div>
       )}
 
@@ -114,6 +126,9 @@ function Map() {
           ))}
         </div>
       )}
+      <a className={submitButtonStyle} href='https://www.sjc.sp.gov.br/media/121101/geo-hist-fase-1.pdf'>
+            Material de apoio
+          </a>
       <ToastContainer />
     </div>
   );
