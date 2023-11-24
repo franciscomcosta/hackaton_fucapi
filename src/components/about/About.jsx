@@ -1,6 +1,5 @@
-import Nav from "../nav/Nav"
 import Man from "../../assets/man.jpg"
-function Start(){
+function About(){
 
     return  (
         <>
@@ -36,4 +35,4 @@ function Start(){
       );
 }
 
-export default Start
+export default About

@@ -5,7 +5,7 @@ const Nav = () => {
 
     let Links =[
       {name:"Início",link:"/"},
-      {name:"Jornada",link:"/"},
+      {name:"Jornada",link:"/Map"},
       {name:"Contatos",link:"/"},
       {name:"Sobre",link:"/sobre"},
     ];
